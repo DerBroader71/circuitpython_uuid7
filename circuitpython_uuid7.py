@@ -27,6 +27,7 @@ import os
 import struct
 import time
 
+
 def generate_uuid_v7():
     """Function to be called that generates UUIDv7."""
     # Get random bytes from the operating system
