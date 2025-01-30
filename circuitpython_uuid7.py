@@ -31,10 +31,8 @@ def generate_uuid_v7():
     """Function to be called that generates UUIDv7."""
     # Get random bytes from the operating system
     value = bytearray(os.urandom(16))
-
     # Get current timestamp in ms
     timestamp = int(time.time() * 1000)
-
     # Format the timestamp
     value[0] = (timestamp >> 40) & 0xFF
     value[1] = (timestamp >> 32) & 0xFF
@@ -42,7 +40,6 @@ def generate_uuid_v7():
     value[3] = (timestamp >> 16) & 0xFF
     value[4] = (timestamp >> 8) & 0xFF
     value[5] = timestamp & 0xFF
-
     # Set the version number (4 bits) and variant (2 bits)
     value[6] = (value[6] & 0x0F) | 0x70
     value[8] = (value[8] & 0x3F) | 0x80
